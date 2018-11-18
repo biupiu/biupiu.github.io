@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+<meta charset="utf-8">
+<title>深入浅出volatile - 玄空五行的博客</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<link rel="canonical" href="http://yoursite.com/post/volatile/">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#2a2b33">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
+<meta name="description" content="深入浅出volatile 用途：   保证变量可见性 限制局部代码指令重排序      volatile语义规范： 使用volatile变量时，必须重新从主内存中加载，并且read、load是连续的 修改volatile变量后，必须立刻同步到主内存，并且store、write是连续的   volatile不是线程安全的 原因： 因为没有锁机制，线程可以并发操作同一资源   volatile的使用场">
+<meta name="keywords" content="java,volatile">
+<meta property="og:type" content="website">
+<meta property="og:title" content="深入浅出volatile">
+<meta property="og:url" content="http://yoursite.com/post/volatile/index.html">
+<meta property="og:site_name" content="玄空五行的博客">
+<meta property="og:description" content="深入浅出volatile 用途：   保证变量可见性 限制局部代码指令重排序      volatile语义规范： 使用volatile变量时，必须重新从主内存中加载，并且read、load是连续的 修改volatile变量后，必须立刻同步到主内存，并且store、write是连续的   volatile不是线程安全的 原因： 因为没有锁机制，线程可以并发操作同一资源   volatile的使用场">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://s1.ax1x.com/2018/11/18/FS8wVA.png">
+<meta property="og:updated_time" content="2018-11-18T13:32:59.710Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深入浅出volatile">
+<meta name="twitter:description" content="深入浅出volatile 用途：   保证变量可见性 限制局部代码指令重排序      volatile语义规范： 使用volatile变量时，必须重新从主内存中加载，并且read、load是连续的 修改volatile变量后，必须立刻同步到主内存，并且store、write是连续的   volatile不是线程安全的 原因： 因为没有锁机制，线程可以并发操作同一资源   volatile的使用场">
+<meta name="twitter:image" content="https://s1.ax1x.com/2018/11/18/FS8wVA.png">
+
+<link rel="stylesheet" href="/fonts.e15b7f98c5fa14803416.css">
+<link rel="stylesheet" href="/styles.33c538ae674b89d5ccc1.css">
+<script src="/config.04d77c8760babc046522.js"></script>
+</head>
+<body>
+<is-root></is-root>
+<script src="/runtime.ec2944dd8b20ec099bf3.js"></script>
+<script src="/polyfills.d08f09f49682da52980e.js"></script>
+<script src="/main.ed840fafa9b7040ecb3a.en.js"></script></body>
+</html>
