@@ -46,7 +46,7 @@
     
     <title>
         
-            وسم: error | 
+            Java中的Error和Exception | 
         
         玄空五行的博客
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no">
     <meta name="description" itemprop="description" content="技术，生活，成长">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",java,error,exception">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -218,7 +218,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="玄空五行的博客">
-    <meta name="msapplication-starturl" content="http://yoursite.com/tags/error/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/12/06/Error和Exception/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="玄空五行的博客">
@@ -233,13 +233,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/tags/error/">
+    <meta property="og:url" content="http://yoursite.com/2018/12/06/Error和Exception/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="وسم: error | 玄空五行的博客">
+    <meta property="og:title" content="Java中的Error和Exception | 玄空五行的博客">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="技术，生活，成长">
-    
+    <meta property="og:article:tag" content="java"> <meta property="og:article:tag" content="error"> <meta property="og:article:tag" content="exception"> 
 
+    
+        <meta property="article:published_time" content="Thu Dec 06 2018 16:19:48 GMT+0800">
+        <meta property="article:modified_time" content="Fri Dec 07 2018 11:07:16 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,13 +250,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/tags/error/index.html">
+        <link rel="canonical" href="http://yoursite.com/2018/12/06/Error和Exception/index.html">
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2018/12/06/Error和Exception/index.html",
+    "headline": "Java中的Error和Exception",
+    "datePublished": "Thu Dec 06 2018 16:19:48 GMT+0800",
+    "dateModified": "Fri Dec 07 2018 11:07:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "玄空五行",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "玄空五行的博客",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",java,error,exception",
+    "description": "技术，生活，成长",
+}
+</script>
 
 
     
@@ -287,98 +320,245 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Exception"><span class="post-toc-number">1.</span> <span class="post-toc-text">Exception</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#checkedException"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">checkedException</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#checkedException-和-RuntimeException的选择"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">checkedException 和 RuntimeException的选择</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#NoClassDefFoundError-和-ClassNOtFoundException"><span class="post-toc-number">2.</span> <span class="post-toc-text">NoClassDefFoundError 和 ClassNOtFoundException</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ClassNotFoundException的产生原因："><span class="post-toc-number">2.1.</span> <span class="post-toc-text">ClassNotFoundException的产生原因：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#解决方法："><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">解决方法：</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NoClassDefFoundError："><span class="post-toc-number">2.2.</span> <span class="post-toc-text">NoClassDefFoundError：</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50 lazy" data-original="/images/winter.jpg">
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(/images/winter.jpg)">
+    
+            <p class="article-headline-p">
+                Java中的Error和Exception
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>玄空五行</strong>
+        <span>Dec 06, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
     
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/12/06/Error和Exception/">Java中的Error和Exception</a></p>
-    </div>
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/error/">error</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/exception/">exception</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/java/">java</a>
+    </li></ul>
+    
 
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
 
-平时代码中接...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/12/06/Error和Exception/" target="_self">واصل القراءة</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="玄空五行's avatar">
-            </div>
-            <div>
-                <strong>玄空五行</strong>
-                <span>Dec 06, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/java/">java</a>
-              </span>
-            
+    
 
-            
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Java中的Error和Exception&url=http://yoursite.com/2018/12/06/Error和Exception/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                شارك على Weibo
+            </li>
+        </a>
+    
 
-            
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Java中的Error和Exception&url=http://yoursite.com/2018/12/06/Error和Exception/index.html&via=玄空五行" target="_blank">
+            <li class="mdl-menu__item">
+                شارك على Twitter
+            </li>
+        </a>
+    
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/12/06/Error和Exception/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                شارك على Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=玄空五行的博客&title=Java中的Error和Exception&summary=技术，生活，成长&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/12/06/Error和Exception/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                شارك على QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+    
 </div>
 
-            
-            
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><img src="/images/error_exception.png" alt=""></p>
+<ul>
+<li><strong>平时代码中接触到的多是Exception，Error更多在JVM内部出现，比如OutofMemory,stackOverFlow</strong></li>
+</ul>
+<h3 id="Exception"><a href="#Exception" class="headerlink" title="Exception"></a>Exception</h3><ol>
+<li>如参数是个非空集合却传入了空值（为什么此时用异常合适，因为需要在出现时给调用方些强提示，带些信息上去）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public void method(String[] args) &#123;</span><br><span class="line">        int temperature = 0;</span><br><span class="line">        if (args.length &gt; 0) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                temperature = Integer.parseInt(args[0]);</span><br><span class="line">            &#125;</span><br><span class="line">            catch(NumberFormatException e) &#123;</span><br><span class="line">                throw new IllegalArgumentException(</span><br><span class="line">                    &quot;Must enter integer as first argument, args[0]=&quot;+args[0],e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>（Method）知道有问题，但自己处理不了,比如读取文件。</li>
+</ol>
+<h4 id="checkedException"><a href="#checkedException" class="headerlink" title="checkedException"></a>checkedException</h4><blockquote>
+<p>Java 要求必须在函数头部写上“throws XXXException”，否则它就编译不通过。这个声明表示函数在某些情况下，会抛出 XXXException 这个异常。由于编译器看到了这个声明，它会严格检查你对该函数的用法。在调用该函数的时候，你必须使用 try-catch 处理这个异常，或者在调用的函数头部也声明 “throws XXXException”，把这个异常传递给上一层调用者。</p>
+</blockquote>
+<h4 id="checkedException-和-RuntimeException的选择"><a href="#checkedException-和-RuntimeException的选择" class="headerlink" title="checkedException 和 RuntimeException的选择"></a>checkedException 和 RuntimeException的选择</h4><p>首先从调用方开始考虑，如果是调用方破坏了协议，则抛出运行时异常，这类异常一般出现可能性较低，调用方已知，所以没必要强制调用方抓此异常。</p>
+<p>然后如果问题出现在被调用方，无法正常执行完成工作，这时候考虑该问题调用方是否可以处理。<br>如果能处理，比如文件找不到、网络超时，则抛检查时异常否则比如磁盘满，抛运行时异常。</p>
+<blockquote>
+<ol>
+<li>抓异常宜晚，抛异常宜早。</li>
+<li>不要抓了，又把异常吞掉，不留下一丝痕迹</li>
+<li>不要抓住异常，打行日志完事儿。</li>
+<li>不要将异常状态流和业务状态流混在一起。</li>
+</ol>
+</blockquote>
+<h3 id="NoClassDefFoundError-和-ClassNOtFoundException"><a href="#NoClassDefFoundError-和-ClassNOtFoundException" class="headerlink" title="NoClassDefFoundError 和 ClassNOtFoundException"></a>NoClassDefFoundError 和 ClassNOtFoundException</h3><blockquote>
+<p>NoClassDefFoundError是一个错误(Error)，而ClassNOtFoundException是一个异常，在Java中对于错误和异常的处理是不同的，我们可以从异常中恢复程序但却不应该尝试从错误中恢复程序。</p>
+</blockquote>
+<h4 id="ClassNotFoundException的产生原因："><a href="#ClassNotFoundException的产生原因：" class="headerlink" title="ClassNotFoundException的产生原因："></a>ClassNotFoundException的产生原因：</h4><ul>
+<li>Java支持使用Class.forName方法来动态地加载类，任意一个类的类名如果被作为参数传递给这个方法都将导致该类被加载到JVM内存中，如果这个类在类路径中没有被找到，那么此时就会在运行时抛出ClassNotFoundException异常。</li>
+</ul>
+<h5 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h5><p>确保所需的类连同它依赖的包存在于类路径中，常见问题在于类名书写错误。<br>另外还有一个导致ClassNotFoundException的原因就是：当一个类已经某个类加载器加载到内存中了，此时另一个类加载器又尝试着动态地从同一个包中加载这个类。通过控制动态类加载过程，可以避免上述情况发生。</p>
+<h4 id="NoClassDefFoundError："><a href="#NoClassDefFoundError：" class="headerlink" title="NoClassDefFoundError："></a>NoClassDefFoundError：</h4><ul>
+<li><p>如果JVM或者ClassLoader实例尝试加载（可以通过正常的方法调用，也可能是使用new来创建新的对象）类的时候却找不到类的定义。要查找的类在编译的时候是存在的，运行的时候却找不到了。这个时候就会导致NoClassDefFoundError</p>
+</li>
+<li><p>造成该问题的原因可能是打包过程漏掉了部分类，或者jar包出现损坏或者篡改。解决这个问题的办法是查找那些在开发期间存在于类路径下但在运行期间却不在类路径下的类。</p>
+</li>
+</ul>
+
         
     
 
     
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
-</script>
-
-    
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/11/28/jvm/" id="post_nav-older" class="next-content">
+            أقدم
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -524,6 +704,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
